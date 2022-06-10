@@ -22,9 +22,9 @@
 			<b>En este apartado se entregaran los modulos:</b>
 		</p>
 		<p>
-			<a href="https://github.com/GrupoTyH23/TP1_2022" target="_BLANK">Modulo 1</a><br>
-			<a href="https://github.com/FrancoFont/Modulo2/tree/main" target="_BLANK">Modulo 2</a> <br>
-			<a href="https://github.com/FrancoFont/Modulo-3" target="_BLANK">Modulo 3</a>
+			<a href="https://github.com/GrupoTyH23/Entregas/tree/main/TP1" target="_BLANK">Modulo 1</a><br>
+			<a href="https://github.com/GrupoTyH23/Entregas/tree/main/TP2" target="_BLANK">Modulo 2</a> <br>
+			<a href="https://github.com/GrupoTyH23/Entregas/tree/main/TP3" target="_BLANK">Modulo 3</a>
 		</p>
 		<a href="https://ingenieria.uncuyo.edu.ar/" target="_BLANK">Esta es nuestra facultad</a><br>
 	</p>
