@@ -16,6 +16,13 @@
 		<li>Ignacio Ortiz Maldonado</li>
 	</u1>
 	</p>
+	<h2>Profesores</h2>
+	<p>
+	<u1>
+		<li>Ricardo Palma</li>
+		<li>Gustavo Mazzioti</li>
+	</u1>
+	</p>
 </body>
 </html>
 
