@@ -5,7 +5,7 @@
 	<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Escudo_uncuyo.jpg/240px-Escudo_uncuyo.jpg">
 </head>
 <body>
-	<h1>Modulo 1: Producción de Textos e Hipertextos</h1>
+	<h1>Modulo 1 - Producción de Textos e Hipertextos</h1>
 	<h2>Integrantes</h2>
 	<p>
 	<u1>
