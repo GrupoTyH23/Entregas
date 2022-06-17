@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Entregas TyH</title>
 	<meta charset="utf-8">
 	<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Escudo_uncuyo.jpg/240px-Escudo_uncuyo.jpg">
 </head>
