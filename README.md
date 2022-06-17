@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Entregas TyH</title>
 	<meta charset="utf-8">
 	<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Escudo_uncuyo.jpg/240px-Escudo_uncuyo.jpg">
 </head>
@@ -24,7 +25,8 @@
 		<p>
 			<a href="https://github.com/GrupoTyH23/Entregas/tree/main/TP1" target="_BLANK">Modulo 1</a><br>
 			<a href="https://github.com/GrupoTyH23/Entregas/tree/main/TP2" target="_BLANK">Modulo 2</a> <br>
-			<a href="https://github.com/GrupoTyH23/Entregas/tree/main/TP3" target="_BLANK">Modulo 3</a>
+			<a href="https://github.com/GrupoTyH23/Entregas/tree/main/TP3" target="_BLANK">Modulo 3</a> <br>
+			<a href="https://github.com/GrupoTyH23/Entregas/tree/main/TP4" target="_BLANK">Modulo 4</a> <br>
 		</p>
 		<a href="https://ingenieria.uncuyo.edu.ar/" target="_BLANK">Esta es nuestra facultad</a><br>
 	</p>
