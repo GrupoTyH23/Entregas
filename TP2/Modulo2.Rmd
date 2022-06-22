@@ -1,0 +1,199 @@
+---
+title: Técnicas y Herramientas Modernas I- Introducción a lenguajes de programación de alto nivel (paradigma de objetos) – Programación en R
+author:
+  - name: Franco Font
+    email: francofont7@gmail.com
+    affiliation: Facultad de Ingenieria
+    correspondingauthor: true
+    footnote: 1
+  - name: Carlos Font
+    email: carlosfont32@gmail.com
+    affiliation: Facultad de Ingenieria
+  - name: Ignacio Ortiz Maldonado
+    email: ortizmaldonadoignacio@gmail.com
+    affiliation: Facultad de Ingenieria
+    footnote: 2
+  - name: Nicolas Guntsche
+    email: nicoguntsche@gmail.com
+    affiliation: Facultad de Ingenieria
+    footnote: 2
+  - name: Sebastián Chiapetta
+    email: sebachiapetta20@gmail.com
+    affiliation: Facultad de Ingenieria
+    footnote: 2
+address:
+  - code: Facultad de Ingenieria
+    address: Centro universitario M5500 Mendoza
+  - code: Facultad de Ingeniria 
+    address: Centro universitario M5500 Mendoza
+footnote:
+  - code: 1
+    text: "Esta es la primera nota del autor."
+  - code: 2
+    text: 
+abstract: |
+   Este módulo de trabajo se realizó con el objetivo de aprender y practicar sobre el lenguaje de programación estadístico R. A medida que se resuelven los diferentes ejercicios se utilizan diferentes herramientas y recursos del R para ser resueltos.
+  
+keywords: 
+  - vector
+  - serie
+  - iteración
+  - modelo matemático
+journal: 
+date: "`r Sys.Date()`"
+classoption: preprint, 3p, authoryear
+bibliography: mybibfile.bib
+linenumbers: false
+numbersections: true
+# csl: https://www.zotero.org/styles/elsevier-harvard
+output: 
+  rticles::elsevier_article:
+    keep_tex: true
+    citation_package: natbib
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+**EJERCICIO N 1: Generar un vector secuencia**
+
+Se compararon dos códigos que tienen la misma finalidad para ver
+cuánto tiempo toman cada uno, con el fin de observar su rendimiento y
+eficiencia. Ambos códigos sirven para generar un vector con una
+secuencia numérica.
+
+##Codigo generado con for:
+
+```{r 1}
+A<- c()
+start_time<-Sys.time()
+for (i in 1:50000) {A[i]<-(i*2)}
+head (A)
+tail(A)
+end_time<- Sys.time() 
+end_time-start_time
+```
+
+##Codigo generado con R
+
+```{r 2}
+start_time2<- Sys.time()
+A<-seq(1,100000,2)
+head(A)
+tail(A)
+end_time2 <- Sys.time()
+end_time2 - start_time2
+```
+
+**EJERCICIO N 2: Implementacion de serie de Fibonacci**
+
+En matemáticas, la sucesión o serie de Fibonacci es la siguiente sucesión infinita de números naturales:
+“0, 1, 1, 2, 3, 5, 8...89, 144, 233...
+00
+La sucesión comienza con los números 0 y 1,2 a partir de estos, «cada término es la suma de los dos
+anteriores», es la relación de recurrencia que la define.
+A los elementos de esta sucesión se les llama números de Fibonacci.
+
+$$
+f_{0}=0;
+f_{1}=1;f_{n+1}=f_{n}+f_{n-1}
+$$ 
+Como consigna de este ejercicio se debe buscar cuantas iteraciones se deben realizar para que el valor de la serie alcance un número mayor a 1.000.000
+
+```{r Fibonacci}
+f0<-0
+f1<-1
+it<-0
+f2<-0
+vec<- c(f0,f1)
+while(f2<=1000000){
+it<-(it+1)
+f2<-(f0+f1)
+vec<- c(vec,f2)
+f0<-f1
+f1<-f2
+}
+it
+tail(vec)
+```
+
+Se puede observar que el algoritmo requiere al menos 30 iteraciones para
+poder superar el millón.
+
+**EJERCICIO N 3:Ordenamiento de un vector por el método burbuja**
+
+En el siguiente ejercicio se realiza el ordenamiento de los valores
+numéricos de un vector mediante el método burbuja vs. el método
+sort nativo de R.
+
+```{r}
+library(microbenchmark)
+x<-sample(1:100,100)
+mbm<-microbenchmark(
+##método de ordenamiento directo o burbuja
+"burbuja"={
+  burbuja<-function(x){
+    n<-length(x)
+    for(j in 1:(n-1)){
+      for(i in 1:(n-j)){
+        if(x[i]>x[i+1]){
+          temporal<-x[i]
+          x[i]<-x[i+1]
+          x[i+1]<-temporal
+        }
+      }
+    }
+  return(x)  
+  }
+res<-burbuja(x) 
+},
+##método de R sort
+"sort"={
+  sort(x)
+}
+)
+mbm
+library(ggplot2)
+autoplot(mbm)
+
+```
+
+**EJERCICIO N 4:Progresión geométrica de los casos de Covid-19**
+
+En el siguiente ejercicio se resuelve, mediante un modelo matemático, la
+incógnita del virus en la pandemia, determinando así cuántos días serán
+necesarios para que se contagien 40 millones de habitantes. Además
+haremos uso de los datos tomados del archivo "casos" de los contagios en
+Argentina.
+Como dato inicial se utiliza segun el 04/07/2020 una cantidad inicial de contagios de 1175.
+
+```{r covid}
+f1<- 1175
+f2<-0
+dia<-0
+vector<- c(f1)
+F<-1.62
+
+while(f2<=40000000){
+  dia<-dia+1
+  f2<-F*f1
+  vector<-c(vector,f2)
+  f1<-f2
+}
+dia
+vector
+plot(vector)
+
+```
+
+```{r}
+hist(vector)
+```
+
+Se puede observar en el vector que almacenó la cantidad de casos en
+Argentina por día, según el modelo matemático, al día 22 recién se
+superará la cantidad de infectados buscada.
+
+```{r}
+plot(density(vector))
+```
